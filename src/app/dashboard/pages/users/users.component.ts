@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { UsersService } from '@services/users.services';
+
 
 @Component({
   selector: 'app-users',
@@ -6,4 +8,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './users.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class UsersComponent { }
+export default class UsersComponent {
+
+  public usersService = inject( UsersService)
+ }
